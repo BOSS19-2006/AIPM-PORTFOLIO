@@ -24,11 +24,11 @@ import Reveal from './components/Reveal';
 gsap.registerPlugin(ScrollTrigger);
 
 const FRAMES = [
-  '/assets/frame_01.jpg',
-  '/assets/frame_02.jpg',
-  '/assets/frame_03.jpg',
-  '/assets/frame_04.jpg',
-  '/assets/frame_05.jpg',
+  `${import.meta.env.BASE_URL}assets/frame_01.jpg`,
+  `${import.meta.env.BASE_URL}assets/frame_02.jpg`,
+  `${import.meta.env.BASE_URL}assets/frame_03.jpg`,
+  `${import.meta.env.BASE_URL}assets/frame_04.jpg`,
+  `${import.meta.env.BASE_URL}assets/frame_05.jpg`,
 ];
 
 export default function App() {
@@ -296,3 +296,5 @@ export default function App() {
     </div>
   );
 }
+
+
