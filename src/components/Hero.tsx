@@ -141,7 +141,7 @@ export default function Hero({ canvasRef, currentFrameIndex, totalFrames, onNavi
 
             <div className="relative z-10 w-full h-full rounded-2xl overflow-hidden bg-black/40">
               <img
-                src={`${import.meta.env.BASE_URL}assets/atharv_headshot.jpg`}
+                src={`${import.meta.env.BASE_URL}assets/atharv_headshot.png`}
                 alt="Atharv Chaure - Professional Headshot"
                 className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
               />
