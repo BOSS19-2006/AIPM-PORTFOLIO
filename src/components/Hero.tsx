@@ -134,12 +134,12 @@ export default function Hero({ canvasRef, currentFrameIndex, totalFrames, onNavi
 
         {/* RIGHT COLUMN: Atharv Chaure Headshot + Living System Signals */}
         <div className="lg:col-span-5 flex justify-center relative">
-          <div className="relative w-full max-w-[400px] aspect-[4/5] rounded-3xl p-3 glass-card border border-white/15 shadow-glow-orange group transition-all duration-500 hover:-translate-y-1">
+          <div className="relative z-20 w-full max-w-[400px] aspect-[4/5] rounded-3xl p-3 glass-card border border-white/15 shadow-glow-orange group transition-all duration-500 hover:-translate-y-1 isolate">
             
             {/* Soft Ambient Halo */}
             <div className="absolute -inset-4 rounded-full bg-gradient-to-r from-orange-500/20 via-amber-500/10 to-transparent blur-3xl pointer-events-none" />
 
-            <div className="relative w-full h-full rounded-2xl overflow-hidden bg-black/40">
+            <div className="relative z-10 w-full h-full rounded-2xl overflow-hidden bg-black/40">
               <img
                 src={`${import.meta.env.BASE_URL}assets/atharv_headshot.png`}
                 alt="Atharv Chaure - Professional Headshot"
@@ -168,3 +168,4 @@ export default function Hero({ canvasRef, currentFrameIndex, totalFrames, onNavi
     </section>
   );
 }
+
