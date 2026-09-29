@@ -4,12 +4,12 @@ import { User, Target, TrendingUp, Cpu, Award, GraduationCap, CheckCircle } from
 export default function AboutSection() {
   const highlights = [
     { 
-      title: 'Founder & Product Lead @ Adnivio', 
-      desc: '0→1 Product Strategy, AI workflows, user discovery & monetization for SME growth.' 
+      title: 'Founder @ Adnivio (Startup Project)', 
+      desc: '0→1 Product Strategy, AI workflows, user discovery & prototyping for SME growth.' 
     },
     { 
       title: 'Airtribe Capstone Lead (Fireflies.ai)', 
-      desc: 'Engineered solution raising 14-day meeting commitment resolution rate from 28% to 45% (+17%).' 
+      desc: 'Engineered solution targeting 14-day meeting commitment resolution increase from 28% to 45% (+17%).' 
     },
     { 
       title: 'AI Product Certified', 
@@ -44,7 +44,7 @@ export default function AboutSection() {
                 I am a Computer Science undergraduate focused on Product Management and AI-first digital platforms. I possess hands-on expertise in product discovery, user research, PRD drafting, RICE prioritization, product metrics, and AI workflow integration.
               </p>
               <p className="text-slate-300 text-sm sm:text-base leading-relaxed font-light">
-                As the Founder & Product Lead of <strong className="text-orange-400 font-semibold">Adnivio</strong>, I defined product strategy, designed core user journeys across AI advertising & onboarding, and built clickable prototypes. In my capstone project for <strong className="text-orange-400 font-semibold">Fireflies.ai</strong>, I addressed post-meeting follow-through bottlenecks to raise resolution rates by +17%.
+                As the Founder of <strong className="text-orange-400 font-semibold">Adnivio</strong> (a startup product project), I defined product strategy, designed core user journeys across AI advertising & onboarding, and built clickable prototypes through the MSME portal submission stage. In my capstone project for <strong className="text-orange-400 font-semibold">Fireflies.ai</strong>, I addressed post-meeting follow-through bottlenecks targeting a +17 percentage point increase in resolution rate.
               </p>
             </div>
 

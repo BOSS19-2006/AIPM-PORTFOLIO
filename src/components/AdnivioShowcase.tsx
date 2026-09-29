@@ -14,7 +14,7 @@ export default function AdnivioShowcase() {
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-xs font-mono font-semibold mb-2">
               <Rocket className="w-3.5 h-3.5" />
-              Primary Product Project • Founder & Product Lead
+              Startup Product Project • Founder
             </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold font-display text-white">
               Adnivio — AI-First SME Growth Platform

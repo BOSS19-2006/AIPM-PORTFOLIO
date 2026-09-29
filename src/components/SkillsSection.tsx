@@ -16,7 +16,7 @@ export default function SkillsSection() {
       icon: Bot,
       skills: [
         'AI Product Strategy', 'AI Use-Case Evaluation', 'AI Feasibility Analysis',
-        'AI Product Lifecycle', 'Model Evaluation (OpenAI / Gemini)', 'AI Risk Management'
+        'AI Product Lifecycle', 'Model Evaluation', 'AI Risk Management'
       ]
     },
     {
@@ -29,9 +29,10 @@ export default function SkillsSection() {
     },
   ];
 
+  const programmingLanguages = ['Java (Core & Advanced)', 'SQL', 'JavaScript', 'HTML', 'CSS'];
+
   const tools = [
-    'Notion', 'Amplitude', 'Figma', 'Make.com', 'n8n', 'Git', 'GitHub', 
-    'ChatGPT', 'Claude Code', 'Replit', 'Java', 'SQL', 'JavaScript', 'HTML/CSS'
+    'Notion', 'Amplitude', 'Figma', 'Git', 'GitHub', 'ChatGPT', 'Claude Code', 'Make.com', 'n8n', 'Replit'
   ];
 
   return (
@@ -45,11 +46,11 @@ export default function SkillsSection() {
               <Code2 className="w-5 h-5" />
             </div>
             <h2 className="text-2xl sm:text-3xl font-extrabold font-display text-white">
-              Skills & Expertise
+              Skills & Competencies
             </h2>
           </div>
           <span className="hidden sm:inline-block text-xs font-mono text-slate-400 uppercase tracking-widest">
-            AI & Product Competencies
+            Product, AI & Technical Stack
           </span>
         </div>
 
@@ -76,22 +77,45 @@ export default function SkillsSection() {
           ))}
         </div>
 
-        {/* Tools & Tech Stack */}
-        <div className="glass-card p-6 sm:p-8 rounded-3xl space-y-4">
-          <h3 className="text-base font-bold text-white flex items-center gap-2">
-            <BrainCircuit className="w-4 h-4 text-orange-400" />
-            Tools, Frameworks & Tech Stack
-          </h3>
-          <div className="flex flex-wrap gap-2 pt-1">
-            {tools.map((tool, idx) => (
-              <span 
-                key={idx}
-                className="px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 text-xs font-semibold text-slate-300 hover:border-orange-500/40 hover:text-orange-400 hover:bg-orange-500/10 transition-all cursor-default"
-              >
-                {tool}
-              </span>
-            ))}
+        {/* Programming & Tools Stack */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          
+          {/* Programming Languages */}
+          <div className="lg:col-span-5 glass-card p-6 sm:p-8 rounded-3xl space-y-4">
+            <h3 className="text-base font-bold text-white flex items-center gap-2">
+              <Code2 className="w-4 h-4 text-orange-400" />
+              Programming Languages
+            </h3>
+            <div className="flex flex-wrap gap-2 pt-1">
+              {programmingLanguages.map((lang, idx) => (
+                <span 
+                  key={idx}
+                  className="px-3 py-1.5 rounded-xl bg-orange-500/10 border border-orange-500/20 text-xs font-semibold text-orange-300 font-mono"
+                >
+                  {lang}
+                </span>
+              ))}
+            </div>
           </div>
+
+          {/* Tools & AI Workflow Platforms */}
+          <div className="lg:col-span-7 glass-card p-6 sm:p-8 rounded-3xl space-y-4">
+            <h3 className="text-base font-bold text-white flex items-center gap-2">
+              <BrainCircuit className="w-4 h-4 text-orange-400" />
+              Tools, Automation & AI Platforms
+            </h3>
+            <div className="flex flex-wrap gap-2 pt-1">
+              {tools.map((tool, idx) => (
+                <span 
+                  key={idx}
+                  className="px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 text-xs font-semibold text-slate-300 hover:border-orange-500/40 hover:text-orange-400 hover:bg-orange-500/10 transition-all cursor-default"
+                >
+                  {tool}
+                </span>
+              ))}
+            </div>
+          </div>
+
         </div>
 
       </div>

@@ -4,26 +4,14 @@ import { Briefcase, Calendar, Building2, GraduationCap, CheckCircle2 } from 'luc
 export default function ExperienceSection() {
   const experiences = [
     {
-      role: 'Founder & Product Lead',
-      company: 'Adnivio',
-      period: 'Aug 2025 – Present',
-      location: 'Indore, India',
-      highlights: [
-        'Defined product strategy and end-to-end user journeys for an AI-powered SME growth platform, translating customer pain points into product requirements.',
-        'Designed core experiences across SME onboarding, product/service marketplace, AI advertising, analytics, digital wallet, and buyer–seller communication.',
-        'Evaluated AI use cases for ad creation, content generation, campaign planning, and performance insights, balancing user value, feasibility, and responsible AI.',
-        'Conducted market & competitive analysis covering SME pain points, TAM/SAM/SOM modeling, subscription monetization, and product positioning.',
-        'Created user flows, PRDs, success metrics, prioritization frameworks, and clickable prototypes through iterative product development.',
-      ]
-    },
-    {
       role: 'Marketing Team Member',
       company: 'Entrepreneurship Cell, IES IPS Academy',
       period: 'Mar 2025 – Present',
       location: 'Indore, India',
       highlights: [
-        'Supported marketing, outreach, sponsorship research, lead generation, and event promotion for entrepreneurship initiatives.',
-        'Collaborated with cross-functional teams on communication, promotional campaigns, sponsor outreach, and event execution.',
+        'Led cross-functional teams to launch 3 entrepreneurship events, increasing student engagement by 40%.',
+        'Drove stakeholder alignment by coordinating with marketing, outreach, and operations to streamline event delivery, resulting in a 30% reduction in coordination time.',
+        'Implemented data-driven campaign strategies for event promotion, boosting event attendance by 55% through targeted digital outreach and partnership initiatives.',
       ]
     }
   ];
@@ -42,7 +30,7 @@ export default function ExperienceSection() {
               Work Experience & Leadership
             </h2>
             <p className="text-xs text-slate-400 font-light mt-0.5">
-              Product Leadership, Startup Building & Entrepreneurship
+              Hands-On Leadership, Marketing Strategy & Stakeholder Alignment
             </p>
           </div>
         </div>
@@ -75,7 +63,7 @@ export default function ExperienceSection() {
 
               <ul className="space-y-2.5">
                 {exp.highlights.map((h, hIdx) => (
-                  <li key={hIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-300 font-light">
+                  <li key={hIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-300 font-light leading-relaxed">
                     <CheckCircle2 className="w-4 h-4 text-orange-500 shrink-0 mt-0.5" />
                     <span>{h}</span>
                   </li>
@@ -85,9 +73,9 @@ export default function ExperienceSection() {
           ))}
 
           {/* Education Card */}
-          <div className="glass-card p-6 sm:p-8 rounded-3xl border border-white/10 flex items-center justify-between">
+          <div className="glass-card p-6 sm:p-8 rounded-3xl border border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div className="flex items-center gap-4">
-              <div className="p-3 rounded-2xl bg-orange-500/10 text-orange-400 border border-orange-500/20">
+              <div className="p-3 rounded-2xl bg-orange-500/10 text-orange-400 border border-orange-500/20 shrink-0">
                 <GraduationCap className="w-6 h-6" />
               </div>
               <div>
@@ -95,7 +83,7 @@ export default function ExperienceSection() {
                 <p className="text-xs text-slate-400 font-light">IES IPS Academy, Indore</p>
               </div>
             </div>
-            <span className="text-xs font-mono text-orange-400 font-semibold px-3 py-1 rounded-full bg-white/5 border border-white/10">
+            <span className="text-xs font-mono text-orange-400 font-semibold px-3 py-1 rounded-full bg-white/5 border border-white/10 w-fit">
               2024 – 2028
             </span>
           </div>

@@ -54,7 +54,7 @@ export default function ProductDecisionEngine() {
       signals: [
         'SMEs lack dedicated marketing managers and get overwhelmed by complex ad managers.',
         'Prompt engineering in raw ChatGPT is too complex for non-technical retail owners.',
-        'Owners need single-dashboard visibility into ad spend ROI and customer inquiries.',
+        'Owners need single-dashboard visibility into campaign setup and customer messaging.',
       ],
       options: [
         {
@@ -65,7 +65,7 @@ export default function ProductDecisionEngine() {
           complexity: 'Medium — React + Node.js + dual OpenAI/Gemini API integration.',
           risk: 'Low — Guided guardrails keep content on-brand.',
           isRecommended: true,
-          metric: 'Target: 3.4k Ad Clicks (13.7% CTR) & 4.2x ROI',
+          metric: 'Target: 3-Minute SME Setup & Guided Workflow Adoption',
         },
         {
           title: 'Option B: Open Prompt AI Playground',

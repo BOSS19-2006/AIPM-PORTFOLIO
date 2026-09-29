@@ -15,16 +15,97 @@ export default function ProjectsSection() {
             </div>
             <div>
               <h2 className="text-2xl sm:text-3xl font-extrabold font-display text-white">
-                Major Product Projects
+                Product Projects
               </h2>
               <p className="text-xs text-slate-400 font-light mt-0.5">
-                0→1 AI Product Strategy, Capstone Engineering & Working Prototypes
+                Startup Product Development, AI Integration & Capstone Engineering
               </p>
             </div>
           </div>
         </div>
 
-        {/* PROJECT 1: Fireflies.ai Capstone Project */}
+        {/* PROJECT 1: Adnivio AI SME Growth Platform */}
+        <div className="glass-card rounded-3xl p-6 sm:p-8 border border-white/10 hover:border-orange-500/40 transition-all duration-300 space-y-6 relative overflow-hidden group">
+          
+          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 pb-6 border-b border-white/10">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-xs font-mono font-semibold mb-2">
+                <Rocket className="w-3.5 h-3.5" />
+                Startup Product Project • Founder (Aug 2025 – Present)
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-white group-hover:text-orange-400 transition-colors">
+                Adnivio — AI-First SME Growth Platform
+              </h3>
+              <p className="text-xs text-slate-400 font-mono mt-1">
+                Founder-Led Product Strategy & End-to-End AI Workflow Architecture
+              </p>
+            </div>
+
+            {/* Prototype Link */}
+            <a
+              href="https://adnivio.lovable.app"
+              target="_blank"
+              rel="noreferrer"
+              className="btn-orange-gradient px-5 py-3 rounded-xl text-xs font-bold flex items-center gap-2 transition-all duration-200"
+            >
+              <ExternalLink className="w-4 h-4" />
+              Launch Clickable Prototype (adnivio.lovable.app)
+            </a>
+          </div>
+
+          {/* Product Architecture & Requirements Details */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+            <div className="space-y-3">
+              <h4 className="text-sm font-bold text-white flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-orange-400" />
+                Product Management Highlights
+              </h4>
+              <ul className="space-y-2 text-xs text-slate-300 font-light leading-relaxed">
+                <li className="flex items-start gap-2">
+                  <span className="text-orange-400 font-bold">•</span>
+                  <span>Defined product strategy and end-to-end user journeys for an AI-powered SME growth platform, translating customer pain points into priorities.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-orange-400 font-bold">•</span>
+                  <span>Designed core experiences across SME onboarding, product marketplace, AI advertising, analytics, wallet, and buyer–seller messaging.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-orange-400 font-bold">•</span>
+                  <span>Evaluated AI use cases combining <strong className="text-white">OpenAI API</strong> for ad copy & <strong className="text-white">Gemini API</strong> for multivariant content generation.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-orange-400 font-bold">•</span>
+                  <span>Developed prototype through MSME portal submission stage as a structured startup proposal.</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* AI Workflow Framework Box */}
+            <div className="p-5 rounded-2xl bg-black/40 border border-white/10 flex flex-col justify-between space-y-3">
+              <h4 className="text-xs font-mono font-bold uppercase text-orange-400 tracking-wider">
+                AI Product Design Pipeline
+              </h4>
+              <div className="flex flex-wrap items-center gap-2 text-xs font-mono">
+                {['Input', 'Context', 'AI Model', 'Output', 'Review', 'Action', 'Measurement'].map((step, idx) => (
+                  <React.Fragment key={idx}>
+                    <span className="px-2.5 py-1 rounded-lg bg-orange-500/10 text-orange-300 border border-orange-500/20">
+                      {step}
+                    </span>
+                    {idx < 6 && <span className="text-slate-500">→</span>}
+                  </React.Fragment>
+                ))}
+              </div>
+              <div className="pt-2 border-t border-white/10 text-[11px] text-slate-400 font-mono">
+                Tech Stack: React • Node.js • MongoDB • OpenAI API • Gemini API • Make.com
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        {/* PROJECT 2: Fireflies.ai Capstone Project */}
         <div className="glass-card rounded-3xl p-6 sm:p-8 border border-white/10 hover:border-orange-500/40 transition-all duration-300 space-y-6 relative overflow-hidden group">
           
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 pb-6 border-b border-white/10">
@@ -65,14 +146,14 @@ export default function ProjectsSection() {
             </div>
           </div>
 
-          {/* Key Metrics Highlight Box with Continuous Looping Counter */}
+          {/* Key Target Metrics Box */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="p-4 rounded-2xl bg-orange-500/10 border border-orange-500/20">
-              <span className="text-[10px] font-mono uppercase text-slate-400 block">TARGET CLOSURE METRIC (CONTINUOUSLY INCREASING)</span>
+              <span className="text-[10px] font-mono uppercase text-slate-400 block">TARGET RESOLUTION METRIC</span>
               <span className="text-2xl font-extrabold text-orange-400 flex items-center gap-1.5">
                 28% → <AnimatedCounter from={28} to={45} suffix="%" loop={true} loopDelay={2000} />
               </span>
-              <span className="text-xs text-slate-300 block font-light mt-0.5">+17% Meeting Commitment Resolution Rate</span>
+              <span className="text-xs text-slate-300 block font-light mt-0.5">+17% Target Resolution Hypothesis</span>
             </div>
 
             <div className="p-4 rounded-2xl bg-white/5 border border-white/10">
@@ -108,87 +189,6 @@ export default function ProjectsSection() {
               </span>
             ))}
           </div>
-        </div>
-
-        {/* PROJECT 2: Adnivio AI SME Growth Platform */}
-        <div className="glass-card rounded-3xl p-6 sm:p-8 border border-white/10 hover:border-orange-500/40 transition-all duration-300 space-y-6 relative overflow-hidden group">
-          
-          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 pb-6 border-b border-white/10">
-            <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-xs font-mono font-semibold mb-2">
-                <Rocket className="w-3.5 h-3.5" />
-                Founder & Product Lead (0→1 Product Strategy)
-              </div>
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-white group-hover:text-orange-400 transition-colors">
-                Adnivio — AI-Powered SME Growth Platform
-              </h3>
-              <p className="text-xs text-slate-400 font-mono mt-1">
-                All-in-One Digital Presence, AI Advertising & Growth Engine for SMEs
-              </p>
-            </div>
-
-            {/* Prototype Link */}
-            <a
-              href="https://adnivio.lovable.app"
-              target="_blank"
-              rel="noreferrer"
-              className="btn-orange-gradient px-5 py-3 rounded-xl text-xs font-bold flex items-center gap-2 transition-all duration-200"
-            >
-              <ExternalLink className="w-4 h-4" />
-              Launch Clickable Prototype (adnivio.lovable.app)
-            </a>
-          </div>
-
-          {/* Product Architecture Details */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            
-            <div className="space-y-3">
-              <h4 className="text-sm font-bold text-white flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-orange-400" />
-                My Product Management Work
-              </h4>
-              <ul className="space-y-2 text-xs text-slate-300 font-light">
-                <li className="flex items-start gap-2">
-                  <span className="text-orange-400 font-bold">•</span>
-                  <span>Defined product vision, target SME personas, MVP scope, and core user journeys.</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-orange-400 font-bold">•</span>
-                  <span>Designed SME onboarding, product/service marketplace, and campaign management flows.</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-orange-400 font-bold">•</span>
-                  <span>Integrated dual AI model pipeline combining <strong className="text-white">OpenAI API</strong> for ad copy & <strong className="text-white">Gemini API</strong> for multivariant content generation.</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-orange-400 font-bold">•</span>
-                  <span>Established product metrics & subscription/ad monetization strategy.</span>
-                </li>
-              </ul>
-            </div>
-
-            {/* AI Workflow Framework Box */}
-            <div className="p-5 rounded-2xl bg-black/40 border border-white/10 flex flex-col justify-between space-y-3">
-              <h4 className="text-xs font-mono font-bold uppercase text-orange-400 tracking-wider">
-                End-to-End AI Product Workflow
-              </h4>
-              <div className="flex flex-wrap items-center gap-2 text-xs font-mono">
-                {['Input', 'Context', 'AI Model', 'Output', 'Review', 'Action', 'Measurement'].map((step, idx) => (
-                  <React.Fragment key={idx}>
-                    <span className="px-2.5 py-1 rounded-lg bg-orange-500/10 text-orange-300 border border-orange-500/20">
-                      {step}
-                    </span>
-                    {idx < 6 && <span className="text-slate-500">→</span>}
-                  </React.Fragment>
-                ))}
-              </div>
-              <div className="pt-2 border-t border-white/10 text-[11px] text-slate-400 font-mono">
-                Tech Stack: React • Node.js • MongoDB • OpenAI API • Gemini API • Make.com
-              </div>
-            </div>
-
-          </div>
-
         </div>
 
       </div>
