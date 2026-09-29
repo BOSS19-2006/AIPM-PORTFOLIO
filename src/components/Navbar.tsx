@@ -22,9 +22,9 @@ export default function Navbar({ activeSection, onNavigate, onOpenResume }: Navb
   const navLinks = [
     { name: 'Home', id: 'home' },
     { name: 'About', id: 'about' },
-    { name: 'Skills', id: 'skills' },
+    { name: 'Process', id: 'pm-process' },
     { name: 'Projects', id: 'projects' },
-    { name: 'Certifications', id: 'certifications' },
+    { name: 'Skills & Certs', id: 'skills' },
     { name: 'Experience', id: 'experience' },
     { name: 'Contact', id: 'contact' },
   ];

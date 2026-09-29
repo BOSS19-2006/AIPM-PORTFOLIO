@@ -8,13 +8,7 @@ import Hero from './components/Hero';
 import AboutSection from './components/AboutSection';
 import PMProcessSection from './components/PMProcessSection';
 import ProductDecisionEngine from './components/ProductDecisionEngine';
-import PrioritizationMatrix from './components/PrioritizationMatrix';
-import AdnivioShowcase from './components/AdnivioShowcase';
-import CaseStudyBreakdown from './components/CaseStudyBreakdown';
-import ProjectsSection from './components/ProjectsSection';
-import LearningLoop from './components/LearningLoop';
 import SkillsSection from './components/SkillsSection';
-import CertificationsSection from './components/CertificationsSection';
 import ExperienceSection from './components/ExperienceSection';
 import ContactSection from './components/ContactSection';
 import ResumeModal from './components/ResumeModal';
@@ -88,11 +82,7 @@ export default function App() {
       const progress = e.progress || 0;
       setScrollProgress(progress);
 
-      const sections = [
-        'home', 'about', 'pm-process', 'decision-engine', 
-        'prioritization-matrix', 'adnivio-showcase', 'case-study', 
-        'projects', 'learning-loop', 'skills', 'certifications', 'experience', 'contact'
-      ];
+      const sections = ['home', 'about', 'pm-process', 'projects', 'skills', 'experience', 'contact'];
       for (const sectionId of sections) {
         const el = document.getElementById(sectionId);
         if (el) {
@@ -238,31 +228,7 @@ export default function App() {
         </Reveal>
 
         <Reveal>
-          <PrioritizationMatrix />
-        </Reveal>
-
-        <Reveal>
-          <AdnivioShowcase />
-        </Reveal>
-
-        <Reveal>
-          <CaseStudyBreakdown />
-        </Reveal>
-
-        <Reveal>
-          <ProjectsSection />
-        </Reveal>
-
-        <Reveal>
-          <LearningLoop />
-        </Reveal>
-
-        <Reveal>
           <SkillsSection />
-        </Reveal>
-
-        <Reveal>
-          <CertificationsSection />
         </Reveal>
 
         <Reveal>
@@ -274,7 +240,7 @@ export default function App() {
         </Reveal>
       </main>
 
-      {/* Footer (User requested to remove "© 2026 ATHARV CHAURE. All rights reserved.") */}
+      {/* Footer */}
       <footer className="relative z-10 py-8 border-t border-white/10 text-xs font-mono text-slate-400">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="flex items-center gap-1">
@@ -296,5 +262,3 @@ export default function App() {
     </div>
   );
 }
-
-
