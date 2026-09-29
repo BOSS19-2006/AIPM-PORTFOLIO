@@ -3,11 +3,13 @@ import { Download, Moon, Sun, Menu, X, Code2, Award, FileText } from 'lucide-rea
 
 interface NavbarProps {
   activeSection: string;
+  theme: 'dark' | 'light';
+  onToggleTheme: () => void;
   onNavigate: (sectionId: string) => void;
   onOpenResume: () => void;
 }
 
-export default function Navbar({ activeSection, onNavigate, onOpenResume }: NavbarProps) {
+export default function Navbar({ activeSection, theme, onToggleTheme, onNavigate, onOpenResume }: NavbarProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -33,7 +35,7 @@ export default function Navbar({ activeSection, onNavigate, onOpenResume }: Navb
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'py-3 bg-[#08070b]/90 backdrop-blur-xl border-b border-white/10 shadow-2xl' 
+          ? 'py-3 header-scrolled bg-[#08070b]/90 backdrop-blur-xl border-b border-white/10 shadow-2xl' 
           : 'py-5 bg-transparent'
       }`}
     >
@@ -70,8 +72,22 @@ export default function Navbar({ activeSection, onNavigate, onOpenResume }: Navb
           ))}
         </nav>
 
-        {/* Action Controls & Resume Button */}
+        {/* Action Controls, Theme Toggle & Resume Button */}
         <div className="hidden sm:flex items-center gap-3">
+          {/* Small Circular Theme Toggle */}
+          <button
+            onClick={onToggleTheme}
+            className="w-9 h-9 rounded-full flex items-center justify-center border transition-all duration-200 bg-white/5 border-white/10 hover:border-orange-500/40 hover:bg-orange-500/10 text-slate-300 hover:text-orange-400 cursor-pointer"
+            title={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+            aria-label="Toggle theme"
+          >
+            {theme === 'dark' ? (
+              <Sun className="w-4 h-4 text-orange-400" />
+            ) : (
+              <Moon className="w-4 h-4 text-orange-500" />
+            )}
+          </button>
+
           <button
             onClick={onOpenResume}
             className="btn-orange-gradient px-4 py-2 rounded-full text-xs font-bold flex items-center gap-2"
@@ -81,13 +97,29 @@ export default function Navbar({ activeSection, onNavigate, onOpenResume }: Navb
           </button>
         </div>
 
-        {/* Mobile Menu Toggle */}
-        <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="lg:hidden p-2 rounded-xl bg-white/5 border border-white/10 text-slate-300"
-        >
-          {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-        </button>
+        {/* Mobile Menu & Theme Controls */}
+        <div className="flex items-center gap-2 lg:hidden">
+          <button
+            onClick={onToggleTheme}
+            className="p-2 rounded-xl bg-white/5 border border-white/10 text-slate-300 hover:text-orange-400"
+            title={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+            aria-label="Toggle theme"
+          >
+            {theme === 'dark' ? (
+              <Sun className="w-4 h-4 text-orange-400" />
+            ) : (
+              <Moon className="w-4 h-4 text-orange-500" />
+            )}
+          </button>
+
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="p-2 rounded-xl bg-white/5 border border-white/10 text-slate-300"
+            aria-label="Toggle navigation menu"
+          >
+            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Drawer */}
@@ -109,13 +141,13 @@ export default function Navbar({ activeSection, onNavigate, onOpenResume }: Navb
               {link.name}
             </button>
           ))}
-          <div className="pt-2 border-t border-white/10">
+          <div className="pt-2 border-t border-white/10 flex items-center justify-between gap-2">
             <button
               onClick={() => {
                 onOpenResume();
                 setMobileMenuOpen(false);
               }}
-              className="w-full btn-orange-gradient py-2.5 rounded-xl text-xs font-bold flex items-center justify-center gap-2"
+              className="flex-1 btn-orange-gradient py-2.5 rounded-xl text-xs font-bold flex items-center justify-center gap-2"
             >
               <Download className="w-4 h-4" />
               Download Resume

@@ -8,11 +8,33 @@
     color-scheme: dark;
   }
 
+  html.light {
+    color-scheme: light;
+  }
+
   body {
     background-color: #08070b;
     color: #f8fafc;
     font-family: 'Plus Jakarta Sans', sans-serif;
+    transition: background-color 0.25s ease, color 0.25s ease;
   }
+
+  html.light body {
+    background-color: #f8f9fa;
+    color: #0f172a;
+  }
+}
+
+/* Smooth Universal Theme Transition */
+*, *::before, *::after {
+  transition-property: background-color, border-color, color, fill, stroke, box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Keep Lenis / Canvas / Animation transforms snappy */
+.cursor-indicator, [style*="transform"], canvas {
+  transition-property: opacity, background-color, border-color !important;
 }
 
 /* Lenis Smooth Scroll */
@@ -41,6 +63,10 @@ html.lenis, html.lenis body {
   background: #08070b;
 }
 
+html.light ::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
 ::-webkit-scrollbar-thumb {
   background: rgba(249, 115, 22, 0.3);
   border-radius: 9999px;
@@ -48,14 +74,6 @@ html.lenis, html.lenis body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(249, 115, 22, 0.6);
-}
-
-/* Warm Dark Studio Radial Background (Reference Image 1) */
-.bg-studio-radial {
-  background: 
-    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(249, 115, 22, 0.15) 0%, transparent 70%),
-    radial-gradient(circle at 80% 60%, rgba(234, 88, 12, 0.08) 0%, transparent 50%),
-    #08070b;
 }
 
 /* Glass Card styling */
@@ -71,9 +89,85 @@ html.lenis, html.lenis body {
   border-color: rgba(249, 115, 22, 0.3);
 }
 
+/* Light Mode Overrides for Glass Cards & Components */
+html.light .glass-card {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 0, 0, 0.09);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.07);
+}
+
+html.light .glass-card:hover {
+  border-color: rgba(249, 115, 22, 0.4);
+}
+
+html.light .text-white {
+  color: #0f172a !important;
+}
+
+html.light .text-slate-200,
+html.light .text-slate-300 {
+  color: #334155 !important;
+}
+
+html.light .text-slate-400 {
+  color: #64748b !important;
+}
+
+html.light .text-slate-500 {
+  color: #64748b !important;
+}
+
+html.light .bg-black\/40,
+html.light .bg-black\/50,
+html.light .bg-black\/60,
+html.light .bg-black\/80 {
+  background-color: rgba(241, 245, 249, 0.88) !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+html.light .bg-white\/5,
+html.light .bg-white\/10 {
+  background-color: rgba(0, 0, 0, 0.04) !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+html.light .border-white\/5,
+html.light .border-white\/10,
+html.light .border-white\/12,
+html.light .border-white\/15,
+html.light .border-white\/20 {
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+html.light header.header-scrolled {
+  background-color: rgba(255, 255, 255, 0.92) !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Background Grid Pattern */
+.bg-grid-pattern {
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+html.light .bg-grid-pattern {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
 /* Glowing text and accent effects */
 .text-gradient-orange {
   background: linear-gradient(135deg, #ffffff 0%, #fed7aa 40%, #f97316 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+html.light .text-gradient-orange {
+  background: linear-gradient(135deg, #0f172a 0%, #c2410c 50%, #f97316 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

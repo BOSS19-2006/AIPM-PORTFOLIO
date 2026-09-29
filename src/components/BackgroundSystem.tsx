@@ -1,19 +1,15 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { Bot, Sparkles, Sliders, CheckCircle2, TrendingUp, Layers, ChevronRight } from 'lucide-react';
+import { 
+  Users, Sliders, FileText, FlaskConical, TrendingUp, MapPin, 
+  CheckCircle2, ArrowRight, Sparkles, ChevronRight, Activity 
+} from 'lucide-react';
 
 interface BackgroundSystemProps {
   activeSection: string;
+  theme?: 'dark' | 'light';
 }
 
-interface TrailPoint {
-  x: number;
-  y: number;
-  angle: number;
-  opacity: number;
-  scale: number;
-}
-
-export default function BackgroundSystem({ activeSection }: BackgroundSystemProps) {
+export default function BackgroundSystem({ activeSection, theme = 'dark' }: BackgroundSystemProps) {
   // Mouse position normalized (-1 to 1) for parallax
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   
@@ -187,28 +183,36 @@ export default function BackgroundSystem({ activeSection }: BackgroundSystemProp
         return 'from-orange-500/18 via-amber-500/10 to-transparent';
       case 'pm-process':
         return 'from-amber-500/18 via-orange-600/10 to-transparent';
-      case 'decision-engine':
+      case 'projects':
         return 'from-blue-600/18 via-indigo-500/10 to-transparent';
-      case 'adnivio-showcase':
-        return 'from-orange-500/18 via-cyan-500/10 to-transparent';
       default:
         return 'from-orange-500/18 via-amber-500/10 to-transparent';
     }
   };
+
+  const isLight = theme === 'light';
+
+  const cardBaseStyle = isLight
+    ? 'bg-white/90 backdrop-blur-xl border-slate-200/90 text-slate-800 shadow-xl shadow-slate-200/60'
+    : 'bg-[#0d0b18]/80 backdrop-blur-xl border-white/12 text-slate-200 shadow-2xl';
+
+  const cardActiveBorder = isLight
+    ? 'border-orange-500/60 shadow-orange-500/20 bg-white/95 scale-[1.02]'
+    : 'border-orange-500/50 shadow-orange-500/10 bg-[#0d0b18]/95 scale-[1.02]';
 
   return (
     <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden select-none">
       
       {/* 1. LAYER 1 (FAR DEPTH): Atmospheric Ambient Lighting & Grid */}
       <div 
-        className={`absolute -top-32 left-1/2 -translate-x-1/2 w-[900px] h-[580px] rounded-full bg-gradient-to-b ${getSectionGlow()} blur-[140px] transition-all duration-1000 opacity-80`}
+        className={`absolute -top-32 left-1/2 -translate-x-1/2 w-[900px] h-[580px] rounded-full bg-gradient-to-b ${getSectionGlow()} blur-[140px] transition-all duration-1000 ${isLight ? 'opacity-40' : 'opacity-80'}`}
         style={{
           transform: `translate3d(${mousePos.x * 12}px, ${mousePos.y * 12}px, 0)`,
         }}
       />
 
       <div 
-        className="absolute bottom-10 right-10 w-[650px] h-[650px] rounded-full bg-purple-600/10 blur-[160px] transition-transform duration-700 ease-out"
+        className={`absolute bottom-10 right-10 w-[650px] h-[650px] rounded-full bg-purple-600/10 blur-[160px] transition-transform duration-700 ease-out ${isLight ? 'opacity-20' : 'opacity-100'}`}
         style={{
           transform: `translate3d(${-mousePos.x * 10}px, ${-mousePos.y * 10}px, 0)`,
         }}
@@ -223,12 +227,16 @@ export default function BackgroundSystem({ activeSection }: BackgroundSystemProp
       />
 
       {/* Vertical Product Thread Axis */}
-      <div className="absolute left-1/2 top-0 bottom-0 w-[1px] bg-gradient-to-b from-orange-500/20 via-white/10 to-orange-500/20 opacity-30 -translate-x-1/2" />
+      <div className={`absolute left-1/2 top-0 bottom-0 w-[1px] bg-gradient-to-b from-orange-500/20 via-white/10 to-orange-500/20 opacity-30 -translate-x-1/2 ${isLight ? 'opacity-15' : 'opacity-30'}`} />
 
 
-      {/* 2. LAYER 2 & 3 (MIDDLE & NEAR DEPTH): Pure Product UI Fragments (ZERO TEXT) */}
+      {/* ========================================================================= */}
+      {/* 2. THE SIX PRODUCT MANAGEMENT ARTIFACT BOXES */}
+      {/* ========================================================================= */}
 
-      {/* FRAGMENT 1 (NEAR DEPTH: multiplier ~0.08): AI Model Workflow Node */}
+      {/* ------------------------------------------------------------------------- */}
+      {/* BOX 1 — USER RESEARCH (Top Left) */}
+      {/* ------------------------------------------------------------------------- */}
       <div 
         ref={(el) => (cardRefs.current[0] = el)}
         className="absolute top-[18%] left-[5%] hidden lg:block transition-all duration-300"
@@ -236,86 +244,43 @@ export default function BackgroundSystem({ activeSection }: BackgroundSystemProp
           transform: `translate3d(${mousePos.x * 32 + magneticOffsets[0].x}px, ${mousePos.y * 32 + magneticOffsets[0].y}px, 0) rotate(${mousePos.x * 1.5}deg)`,
         }}
       >
-        <div className={`p-4 rounded-2xl bg-[#0d0b18]/80 backdrop-blur-xl border transition-all duration-300 w-52 space-y-3 shadow-2xl ${
-          magneticOffsets[0].active ? 'border-orange-500/50 shadow-orange-500/10 bg-[#0d0b18]/95 scale-[1.02]' : 'border-white/12'
+        <div className={`p-4 rounded-2xl border transition-all duration-300 w-52 space-y-3 ${cardBaseStyle} ${
+          magneticOffsets[0].active ? cardActiveBorder : ''
         }`}>
-          <div className="flex items-center justify-between text-orange-400">
-            <div className="p-1.5 rounded-lg bg-orange-500/10 border border-orange-500/20">
-              <Bot className="w-4 h-4" />
+          <div className="flex items-center justify-between border-b pb-2 border-white/10">
+            <div className="flex items-center gap-1.5 text-xs font-mono font-bold tracking-wide text-orange-400">
+              <Users className="w-3.5 h-3.5" />
+              <span>USER RESEARCH</span>
             </div>
-            <div className="flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              <div className="w-12 h-1.5 rounded-full bg-white/20" />
-            </div>
-          </div>
-          
-          {/* Skeleton UI Lines */}
-          <div className="space-y-1.5">
-            <div className="w-3/4 h-2 rounded-full bg-white/30" />
-            <div className="w-1/2 h-2 rounded-full bg-white/15" />
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
           </div>
 
-          {/* Node Pipeline Diagram */}
-          <div className="flex items-center justify-between pt-1 text-slate-400">
-            <div className="w-6 h-6 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center">
-              <div className="w-2 h-2 rounded-sm bg-orange-400" />
+          <div className="space-y-1.5 text-[11px] font-mono">
+            <div className="flex items-center gap-2 text-slate-300">
+              <span className="w-1.5 h-1.5 rounded-full bg-orange-400" />
+              <span>Interviews</span>
             </div>
-            <div className="w-8 h-[1px] bg-orange-500/40" />
-            <div className="w-6 h-6 rounded-lg bg-orange-500/20 border border-orange-500/30 flex items-center justify-center">
-              <Sparkles className="w-3 h-3 text-orange-300" />
+            <div className="flex items-center gap-2 text-slate-300">
+              <span className="w-1.5 h-1.5 rounded-full bg-orange-400" />
+              <span>Key Insights</span>
             </div>
-            <div className="w-8 h-[1px] bg-orange-500/40" />
-            <div className="w-6 h-6 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center">
-              <div className="w-2 h-2 rounded-sm bg-emerald-400" />
+            <div className="flex items-center gap-2 text-slate-300">
+              <span className="w-1.5 h-1.5 rounded-full bg-orange-400" />
+              <span>Pain Points</span>
             </div>
+          </div>
+
+          <div className="pt-1 border-t border-white/10">
+            <span className="px-2 py-0.5 rounded bg-orange-500/10 border border-orange-500/20 text-[10px] font-mono text-orange-400 font-bold block text-center">
+              INSIGHT → OPPORTUNITY
+            </span>
           </div>
         </div>
       </div>
 
-      {/* FRAGMENT 2 (MIDDLE DEPTH: multiplier ~0.045): RICE Prioritization Sliders */}
-      <div 
-        ref={(el) => (cardRefs.current[1] = el)}
-        className="absolute top-[16%] right-[6%] hidden lg:block transition-all duration-300"
-        style={{
-          transform: `translate3d(${mousePos.x * -24 + magneticOffsets[1].x}px, ${mousePos.y * 24 + magneticOffsets[1].y}px, 0) rotate(${mousePos.x * -1.5}deg)`,
-        }}
-      >
-        <div className={`p-4 rounded-2xl bg-[#0d0b18]/80 backdrop-blur-xl border transition-all duration-300 w-48 space-y-3 shadow-2xl ${
-          magneticOffsets[1].active ? 'border-amber-500/50 shadow-amber-500/10 bg-[#0d0b18]/95 scale-[1.02]' : 'border-white/12'
-        }`}>
-          <div className="flex items-center justify-between">
-            <div className="p-1.5 rounded-lg bg-amber-500/10 text-amber-400 border border-amber-500/20">
-              <Sliders className="w-4 h-4" />
-            </div>
-            <div className="px-2 py-0.5 rounded bg-amber-500/20 border border-amber-500/30 w-10 h-3" />
-          </div>
-
-          {/* 3 Slider Track Visuals */}
-          <div className="space-y-2">
-            <div className="space-y-1">
-              <div className="flex justify-between">
-                <div className="w-10 h-1.5 rounded bg-white/20" />
-                <div className="w-6 h-1.5 rounded bg-amber-400" />
-              </div>
-              <div className="w-full h-1.5 rounded-full bg-white/10 relative overflow-hidden">
-                <div className="w-[75%] h-full bg-gradient-to-r from-amber-500 to-orange-400 rounded-full" />
-              </div>
-            </div>
-
-            <div className="space-y-1">
-              <div className="flex justify-between">
-                <div className="w-8 h-1.5 rounded bg-white/20" />
-                <div className="w-6 h-1.5 rounded bg-emerald-400" />
-              </div>
-              <div className="w-full h-1.5 rounded-full bg-white/10 relative overflow-hidden">
-                <div className="w-[45%] h-full bg-emerald-400 rounded-full" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* FRAGMENT 3 (MIDDLE DEPTH: multiplier ~0.045): Connected User Journey Step Blocks */}
+      {/* ------------------------------------------------------------------------- */}
+      {/* BOX 2 — USER JOURNEY (Mid Left) */}
+      {/* ------------------------------------------------------------------------- */}
       <div 
         ref={(el) => (cardRefs.current[2] = el)}
         className="absolute top-[48%] left-[7%] hidden lg:block transition-all duration-300"
@@ -323,64 +288,38 @@ export default function BackgroundSystem({ activeSection }: BackgroundSystemProp
           transform: `translate3d(${mousePos.x * 20 + magneticOffsets[2].x}px, ${mousePos.y * -18 + magneticOffsets[2].y}px, 0)`,
         }}
       >
-        <div className={`p-4 rounded-2xl bg-[#0d0b18]/80 backdrop-blur-xl border transition-all duration-300 w-56 space-y-2.5 shadow-2xl ${
-          magneticOffsets[2].active ? 'border-orange-500/50 shadow-orange-500/10 bg-[#0d0b18]/95 scale-[1.02]' : 'border-white/12'
+        <div className={`p-4 rounded-2xl border transition-all duration-300 w-56 space-y-3 ${cardBaseStyle} ${
+          magneticOffsets[2].active ? cardActiveBorder : ''
         }`}>
-          <div className="flex items-center justify-between border-b border-white/10 pb-2">
-            <div className="w-20 h-2 rounded bg-white/30" />
-            <div className="w-2 h-2 rounded-full bg-orange-400" />
+          <div className="flex items-center justify-between border-b pb-2 border-white/10">
+            <span className="text-xs font-mono font-bold tracking-wide text-orange-400">
+              USER JOURNEY
+            </span>
+            <span className="w-1.5 h-1.5 rounded-full bg-orange-400" />
           </div>
 
-          <div className="flex items-center justify-between text-xs font-mono">
-            <div className="px-2.5 py-1.5 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center">
-              <div className="w-5 h-2 rounded bg-slate-300" />
+          {/* 4 Connected Nodes Map */}
+          <div className="space-y-1.5 text-[11px] font-mono">
+            <div className="flex items-center gap-1.5">
+              <span className="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-slate-300 font-semibold">Discover</span>
+              <span className="text-orange-400 font-bold">→</span>
+              <span className="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-slate-300 font-semibold">Evaluate</span>
             </div>
-            <ChevronRight className="w-3.5 h-3.5 text-orange-400 shrink-0" />
-            <div className="px-2.5 py-1.5 rounded-lg bg-orange-500/20 border border-orange-500/30 flex items-center justify-center shadow-lg">
-              <div className="w-6 h-2 rounded bg-orange-300" />
+            <div className="flex items-center gap-1.5 pl-6">
+              <span className="text-orange-400 font-bold">→</span>
+              <span className="px-2 py-0.5 rounded bg-orange-500/20 border border-orange-500/30 text-orange-300 font-bold">Activate</span>
             </div>
-            <ChevronRight className="w-3.5 h-3.5 text-orange-400 shrink-0" />
-            <div className="px-2.5 py-1.5 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center">
-              <div className="w-5 h-2 rounded bg-slate-300" />
+            <div className="flex items-center gap-1.5 pl-12">
+              <span className="text-orange-400 font-bold">→</span>
+              <span className="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-slate-300 font-semibold">Retain</span>
             </div>
           </div>
         </div>
       </div>
 
-      {/* FRAGMENT 4 (NEAR DEPTH: multiplier ~0.08): Roadmap Status Checklist */}
-      <div 
-        ref={(el) => (cardRefs.current[3] = el)}
-        className="absolute top-[45%] right-[8%] hidden lg:block transition-all duration-300"
-        style={{
-          transform: `translate3d(${mousePos.x * -30 + magneticOffsets[3].x}px, ${mousePos.y * -25 + magneticOffsets[3].y}px, 0)`,
-        }}
-      >
-        <div className={`p-4 rounded-2xl bg-[#0d0b18]/80 backdrop-blur-xl border transition-all duration-300 w-50 space-y-2.5 shadow-2xl ${
-          magneticOffsets[3].active ? 'border-orange-500/50 shadow-orange-500/10 bg-[#0d0b18]/95 scale-[1.02]' : 'border-white/12'
-        }`}>
-          <div className="flex items-center justify-between border-b border-white/10 pb-2">
-            <div className="w-24 h-2 rounded bg-white/30" />
-            <div className="w-6 h-2 rounded bg-orange-500/40" />
-          </div>
-
-          <div className="space-y-2 text-xs">
-            <div className="flex items-center gap-2 text-emerald-400">
-              <CheckCircle2 className="w-3.5 h-3.5 shrink-0" />
-              <div className="w-24 h-1.5 rounded bg-emerald-400/40" />
-            </div>
-            <div className="flex items-center gap-2 text-orange-400">
-              <span className="w-2 h-2 rounded-full bg-orange-500 animate-ping shrink-0" />
-              <div className="w-28 h-1.5 rounded bg-orange-400/60" />
-            </div>
-            <div className="flex items-center gap-2 text-slate-500">
-              <span className="w-2 h-2 rounded-full border border-slate-600 shrink-0" />
-              <div className="w-20 h-1.5 rounded bg-white/10" />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* FRAGMENT 5 (MIDDLE DEPTH: multiplier ~0.045): AI Sparkle Prompt Fragment */}
+      {/* ------------------------------------------------------------------------- */}
+      {/* BOX 3 — PRODUCT REQUIREMENT (Bottom Left) */}
+      {/* ------------------------------------------------------------------------- */}
       <div 
         ref={(el) => (cardRefs.current[4] = el)}
         className="absolute top-[72%] left-[8%] hidden lg:block transition-all duration-300"
@@ -388,19 +327,143 @@ export default function BackgroundSystem({ activeSection }: BackgroundSystemProp
           transform: `translate3d(${mousePos.x * 25 + magneticOffsets[4].x}px, ${mousePos.y * 18 + magneticOffsets[4].y}px, 0)`,
         }}
       >
-        <div className={`p-4 rounded-2xl bg-[#0d0b18]/80 backdrop-blur-xl border transition-all duration-300 w-52 space-y-2 shadow-2xl ${
-          magneticOffsets[4].active ? 'border-purple-500/50 shadow-purple-500/10 bg-[#0d0b18]/95 scale-[1.02]' : 'border-white/12'
+        <div className={`p-4 rounded-2xl border transition-all duration-300 w-56 space-y-2.5 ${cardBaseStyle} ${
+          magneticOffsets[4].active ? cardActiveBorder : ''
         }`}>
-          <div className="flex items-center gap-2 text-purple-400">
-            <Sparkles className="w-4 h-4" />
-            <div className="w-16 h-2 rounded bg-purple-400/40" />
+          <div className="flex items-center justify-between border-b pb-2 border-white/10">
+            <div className="flex items-center gap-1.5 text-xs font-mono font-bold tracking-wide text-orange-400">
+              <FileText className="w-3.5 h-3.5" />
+              <span>PRODUCT REQUIREMENT</span>
+            </div>
           </div>
-          <div className="w-full h-1.5 rounded bg-white/15" />
-          <div className="w-3/4 h-1.5 rounded bg-white/10" />
+
+          <div className="space-y-1 text-[11px] font-mono text-slate-300">
+            <div className="flex items-center gap-1.5">
+              <span className="text-orange-400">•</span>
+              <span>Problem</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <span className="text-orange-400">•</span>
+              <span>User Story</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <span className="text-orange-400">•</span>
+              <span>Acceptance Criteria</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <span className="text-orange-400">•</span>
+              <span>Success Metric</span>
+            </div>
+          </div>
+
+          <div className="pt-1.5 border-t border-white/10 flex items-center justify-between text-[10px] font-mono">
+            <span className="text-slate-400 font-semibold">PRD v1.2</span>
+            <span className="flex items-center gap-1 text-emerald-400 font-bold">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              READY
+            </span>
+          </div>
         </div>
       </div>
 
-      {/* FRAGMENT 6 (NEAR DEPTH: multiplier ~0.08): Product Analytics Sparkline Graph */}
+      {/* ------------------------------------------------------------------------- */}
+      {/* BOX 4 — FEATURE PRIORITY (Top Right) */}
+      {/* ------------------------------------------------------------------------- */}
+      <div 
+        ref={(el) => (cardRefs.current[1] = el)}
+        className="absolute top-[16%] right-[6%] hidden lg:block transition-all duration-300"
+        style={{
+          transform: `translate3d(${mousePos.x * -24 + magneticOffsets[1].x}px, ${mousePos.y * 24 + magneticOffsets[1].y}px, 0) rotate(${mousePos.x * -1.5}deg)`,
+        }}
+      >
+        <div className={`p-4 rounded-2xl border transition-all duration-300 w-52 space-y-3 ${cardBaseStyle} ${
+          magneticOffsets[1].active ? cardActiveBorder : ''
+        }`}>
+          <div className="flex items-center justify-between border-b pb-2 border-white/10">
+            <div className="flex items-center gap-1.5 text-xs font-mono font-bold tracking-wide text-amber-400">
+              <Sliders className="w-3.5 h-3.5" />
+              <span>FEATURE PRIORITY</span>
+            </div>
+            <span className="px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300 text-[10px] font-mono font-bold">
+              RICE
+            </span>
+          </div>
+
+          <div className="space-y-1.5 text-[11px] font-mono text-slate-300">
+            <div className="flex justify-between items-center">
+              <span>Impact</span>
+              <span className="text-amber-400 tracking-wider">●●●●○</span>
+            </div>
+            <div className="flex justify-between items-center">
+              <span>Reach</span>
+              <span className="text-amber-400 tracking-wider">●●●●●</span>
+            </div>
+            <div className="flex justify-between items-center">
+              <span>Confidence</span>
+              <span className="text-amber-400 tracking-wider">●●●●○</span>
+            </div>
+            <div className="flex justify-between items-center">
+              <span>Effort</span>
+              <span className="text-emerald-400 tracking-wider">●●○○○</span>
+            </div>
+          </div>
+
+          <div className="pt-1 border-t border-white/10 flex items-center justify-between text-[10px] font-mono text-emerald-400 font-bold">
+            <span>PRIORITIZED</span>
+            <span>✓</span>
+          </div>
+        </div>
+      </div>
+
+      {/* ------------------------------------------------------------------------- */}
+      {/* BOX 5 — PRODUCT EXPERIMENT (Mid Right) */}
+      {/* ------------------------------------------------------------------------- */}
+      <div 
+        ref={(el) => (cardRefs.current[3] = el)}
+        className="absolute top-[45%] right-[8%] hidden lg:block transition-all duration-300"
+        style={{
+          transform: `translate3d(${mousePos.x * -30 + magneticOffsets[3].x}px, ${mousePos.y * -25 + magneticOffsets[3].y}px, 0)`,
+        }}
+      >
+        <div className={`p-4 rounded-2xl border transition-all duration-300 w-52 space-y-2.5 ${cardBaseStyle} ${
+          magneticOffsets[3].active ? cardActiveBorder : ''
+        }`}>
+          <div className="flex items-center justify-between border-b pb-2 border-white/10">
+            <div className="flex items-center gap-1.5 text-xs font-mono font-bold tracking-wide text-orange-400">
+              <FlaskConical className="w-3.5 h-3.5" />
+              <span>PRODUCT EXPERIMENT</span>
+            </div>
+          </div>
+
+          <div className="space-y-1.5 text-[11px] font-mono">
+            <span className="text-[10px] uppercase font-bold text-slate-400 block">HYPOTHESIS</span>
+            
+            {/* A -> B Variant Flow */}
+            <div className="p-1.5 rounded-lg bg-white/5 border border-white/10 flex items-center justify-between text-xs font-bold font-mono">
+              <span className="text-orange-400 px-1.5 py-0.5 rounded bg-orange-500/10">A</span>
+              <span className="text-slate-400">─────────→</span>
+              <span className="text-emerald-400 px-1.5 py-0.5 rounded bg-emerald-500/10">B</span>
+            </div>
+
+            <div className="text-[10px] text-slate-300 pt-0.5">
+              <span>Metric: </span>
+              <strong className="text-white">Activation</strong>
+            </div>
+          </div>
+
+          <div className="pt-1.5 border-t border-white/10 flex items-center justify-between text-[10px] font-mono">
+            <span className="text-slate-400">Status:</span>
+            <span className="flex items-center gap-1 text-orange-400 font-bold">
+              TESTING
+              <span className="w-1.5 h-1.5 rounded-full bg-orange-400 animate-ping" />
+            </span>
+          </div>
+        </div>
+      </div>
+
+      {/* ------------------------------------------------------------------------- */}
+      {/* BOX 6 — PRODUCT METRICS (Bottom Right) */}
+      {/* ------------------------------------------------------------------------- */}
       <div 
         ref={(el) => (cardRefs.current[5] = el)}
         className="absolute top-[70%] right-[10%] hidden lg:block transition-all duration-300"
@@ -408,25 +471,36 @@ export default function BackgroundSystem({ activeSection }: BackgroundSystemProp
           transform: `translate3d(${mousePos.x * -28 + magneticOffsets[5].x}px, ${mousePos.y * 22 + magneticOffsets[5].y}px, 0)`,
         }}
       >
-        <div className={`p-4 rounded-2xl bg-[#0d0b18]/80 backdrop-blur-xl border transition-all duration-300 w-48 space-y-2.5 shadow-2xl ${
-          magneticOffsets[5].active ? 'border-emerald-500/50 shadow-emerald-500/10 bg-[#0d0b18]/95 scale-[1.02]' : 'border-white/12'
+        <div className={`p-4 rounded-2xl border transition-all duration-300 w-52 space-y-2.5 ${cardBaseStyle} ${
+          magneticOffsets[5].active ? cardActiveBorder : ''
         }`}>
-          <div className="flex items-center justify-between">
-            <div className="w-20 h-2 rounded bg-white/30" />
-            <TrendingUp className="w-4 h-4 text-emerald-400" />
+          <div className="flex items-center justify-between border-b pb-2 border-white/10">
+            <div className="flex items-center gap-1.5 text-xs font-mono font-bold tracking-wide text-emerald-400">
+              <TrendingUp className="w-3.5 h-3.5" />
+              <span>PRODUCT METRICS</span>
+            </div>
           </div>
 
-          {/* SVG Sparkline Graph Curve */}
-          <svg className="w-full h-8 text-orange-400 drop-shadow-[0_0_8px_rgba(249,115,22,0.4)]" viewBox="0 0 100 30" fill="none">
-            <path d="M 0,24 Q 25,2 50,18 T 100,4" stroke="currentColor" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-            <circle cx="100" cy="4" r="3" fill="#f97316" />
-          </svg>
+          {/* Metric lines flow */}
+          <div className="space-y-1 text-[11px] font-mono text-slate-300">
+            <div className="flex justify-between items-center">
+              <span>Activation</span>
+              <span className="text-slate-400">─────╮</span>
+            </div>
+            <div className="flex justify-between items-center">
+              <span>Retention</span>
+              <span className="text-slate-400">───╮ │</span>
+            </div>
+            <div className="flex justify-between items-center">
+              <span>Conversion</span>
+              <span className="text-slate-400">───╯ ╰─</span>
+            </div>
+          </div>
 
-          <div className="flex items-end gap-1.5 pt-1 h-5 justify-between">
-            <div className="w-3 bg-white/10 rounded-t h-2" />
-            <div className="w-3 bg-white/15 rounded-t h-3" />
-            <div className="w-3 bg-orange-500/40 rounded-t h-4" />
-            <div className="w-3 bg-orange-400 rounded-t h-5" />
+          <div className="pt-1 border-t border-white/10">
+            <span className="px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20 text-[10px] font-mono text-emerald-400 font-bold block text-center">
+              MEASURE → LEARN
+            </span>
           </div>
         </div>
       </div>

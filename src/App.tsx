@@ -35,6 +35,27 @@ export default function App() {
   const [isResumeOpen, setIsResumeOpen] = useState(false);
   const [imagesLoaded, setImagesLoaded] = useState(false);
 
+  // Theme state: Dark mode by default, persisting to localStorage
+  const [theme, setTheme] = useState<'dark' | 'light'>(() => {
+    const saved = localStorage.getItem('theme');
+    return (saved === 'light' || saved === 'dark') ? saved : 'dark';
+  });
+
+  useEffect(() => {
+    if (theme === 'light') {
+      document.documentElement.classList.add('light');
+      document.documentElement.classList.remove('dark');
+    } else {
+      document.documentElement.classList.add('dark');
+      document.documentElement.classList.remove('light');
+    }
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
+  };
+
   const loadedImagesRef = useRef<HTMLImageElement[]>([]);
 
   // Preload frame images
@@ -194,14 +215,16 @@ export default function App() {
   };
 
   return (
-    <div className="relative w-full min-h-screen bg-[#08070b] text-white selection:bg-orange-500/30 selection:text-orange-200">
+    <div className={`relative w-full min-h-screen ${theme === 'light' ? 'bg-[#f8f9fa] text-slate-900' : 'bg-[#08070b] text-white'} selection:bg-orange-500/30 selection:text-orange-200 transition-colors duration-300`}>
       
-      {/* Dynamic Living AI Background Environment */}
-      <BackgroundSystem activeSection={activeSection} />
+      {/* Dynamic Living AI Background Environment with Theme Support */}
+      <BackgroundSystem activeSection={activeSection} theme={theme} />
 
-      {/* Top Navbar */}
+      {/* Top Navbar with Theme Toggle */}
       <Navbar
         activeSection={activeSection}
+        theme={theme}
+        onToggleTheme={toggleTheme}
         onNavigate={handleNavigate}
         onOpenResume={() => setIsResumeOpen(true)}
       />
