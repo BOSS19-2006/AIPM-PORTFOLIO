@@ -1,5 +1,5 @@
 import React from 'react';
-import { Code2, Cpu, BarChart3, Rocket, Compass, Layers, Zap, Bot, BrainCircuit, Award, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import { Code2, BarChart3, Rocket, Bot, BrainCircuit, Award, ShieldCheck, CheckCircle2 } from 'lucide-react';
 
 export default function SkillsSection() {
   const skillCategories = [
@@ -8,31 +8,32 @@ export default function SkillsSection() {
       icon: Rocket,
       skills: [
         'Product Discovery', 'User Research', 'Problem Framing', 'PRDs & User Stories',
-        'Roadmapping', 'RICE & MoSCoW Prioritization', 'Product Metrics & KPIs', 'Stakeholder Communication'
+        'User Flows', 'Feature Prioritization', 'Roadmapping', 'Product Metrics & KPI Definition', 'Stakeholder Communication'
       ]
     },
     {
-      title: 'AI Product Strategy',
+      title: 'AI Product Management',
       icon: Bot,
       skills: [
-        'AI Product Strategy', 'AI Use-Case Evaluation', 'AI Feasibility Analysis',
-        'AI Product Lifecycle', 'Model Evaluation', 'AI Risk Management'
+        'AI Product Strategy', 'AI Product Fundamentals', 'AI Use-Case Identification',
+        'Prompt Engineering', 'AI Tool Evaluation', 'AI Workflow Design', 'AI Product Research'
       ]
     },
     {
-      title: 'Business & Growth',
+      title: 'Business & Analytics',
       icon: BarChart3,
       skills: [
         'Market Research', 'Competitive Analysis', 'TAM / SAM / SOM Modeling',
-        'Business Models', 'ROI & Impact Analysis', 'Data-Informed Decision Making'
+        'Business Models', 'ROI Analysis', 'Data-Informed Decision-Making'
       ]
     },
   ];
 
-  const programmingLanguages = ['Java (Core & Advanced)', 'SQL', 'JavaScript', 'HTML', 'CSS'];
+  const technicalSkills = ['Java (Core+Advance)', 'SQL', 'JavaScript', 'HTML', 'CSS'];
 
   const tools = [
-    'Notion', 'Amplitude', 'Figma', 'Git', 'GitHub', 'ChatGPT', 'Claude Code', 'Make.com', 'n8n', 'Replit'
+    'Git', 'GitHub', 'ChatGPT', 'Claude Code', 'Make.com', 'n8n', 'Replit', 
+    'Antigravity', 'Codex', 'Amplitude', 'Mixpanel', 'Figma', 'Notion'
   ];
 
   const certifications = [
@@ -98,22 +99,22 @@ export default function SkillsSection() {
           ))}
         </div>
 
-        {/* Programming & Tools Stack */}
+        {/* Technical & Tools Stack */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
           
-          {/* Programming Languages */}
+          {/* Technical Languages */}
           <div className="lg:col-span-5 glass-card p-6 sm:p-8 rounded-3xl space-y-4">
             <h3 className="text-base font-bold text-white flex items-center gap-2">
               <Code2 className="w-4 h-4 text-orange-400" />
-              Programming Languages
+              Technical Skills
             </h3>
             <div className="flex flex-wrap gap-2 pt-1">
-              {programmingLanguages.map((lang, idx) => (
+              {technicalSkills.map((tech, idx) => (
                 <span 
                   key={idx}
                   className="px-3 py-1.5 rounded-xl bg-orange-500/10 border border-orange-500/20 text-xs font-semibold text-orange-300 font-mono"
                 >
-                  {lang}
+                  {tech}
                 </span>
               ))}
             </div>
@@ -123,7 +124,7 @@ export default function SkillsSection() {
           <div className="lg:col-span-7 glass-card p-6 sm:p-8 rounded-3xl space-y-4">
             <h3 className="text-base font-bold text-white flex items-center gap-2">
               <BrainCircuit className="w-4 h-4 text-orange-400" />
-              Tools, Automation & AI Platforms
+              Tools, Platforms & AI Assistants
             </h3>
             <div className="flex flex-wrap gap-2 pt-1">
               {tools.map((tool, idx) => (
@@ -139,7 +140,7 @@ export default function SkillsSection() {
 
         </div>
 
-        {/* MERGED ITEM 3: CERTIFICATIONS GRID EMBEDDED DIRECTLY IN SKILLS */}
+        {/* Certifications Grid */}
         <div className="space-y-6 pt-4 border-t border-white/10">
           <div className="flex items-center gap-2">
             <div className="p-2 rounded-xl bg-orange-500/10 text-orange-400 border border-orange-500/20">

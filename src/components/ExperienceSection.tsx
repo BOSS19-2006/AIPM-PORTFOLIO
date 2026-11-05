@@ -9,9 +9,9 @@ export default function ExperienceSection() {
       period: 'Mar 2025 – Present',
       location: 'Indore, India',
       highlights: [
-        'Led cross-functional teams to launch 3 entrepreneurship events, increasing student engagement by 40%.',
-        'Drove stakeholder alignment by coordinating with marketing, outreach, and operations to streamline event delivery, resulting in a 30% reduction in coordination time.',
-        'Implemented data-driven campaign strategies for event promotion, boosting event attendance by 55% through targeted digital outreach and partnership initiatives.',
+        'Coordinated delivery of 3 entrepreneurship events with marketing, outreach, and operations teams, contributing to a 40% increase in student engagement.',
+        'Streamlined cross-functional event workflows by aligning marketing, outreach, and operations stakeholders, reducing coordination time by 30%.',
+        'Executed targeted digital outreach and partnership campaigns, contributing to a 55% increase in event attendance.',
       ]
     }
   ];
