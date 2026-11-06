@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, MapPin, Send, Phone, Linkedin, Github, CheckCircle2, Copy, Sparkles, RefreshCw, ExternalLink, Globe } from 'lucide-react';
+import { Mail, MapPin, Send, Linkedin, Github, CheckCircle2, Copy, Sparkles, RefreshCw, ExternalLink, Globe } from 'lucide-react';
 
 export default function ContactSection() {
   const [submitted, setSubmitted] = useState(false);
@@ -121,18 +121,7 @@ export default function ContactSection() {
                 </button>
               </div>
 
-              {/* Phone */}
-              <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-white/5 border border-white/10 text-xs sm:text-sm text-slate-300">
-                <div className="w-9 h-9 rounded-xl bg-orange-500/10 text-orange-400 border border-orange-500/20 flex items-center justify-center shrink-0">
-                  <Phone className="w-4 h-4" />
-                </div>
-                <div>
-                  <span className="text-[10px] text-slate-400 uppercase font-mono block">PHONE</span>
-                  <a href="tel:7987709099" className="font-semibold text-white hover:text-orange-400 transition-colors">
-                    +91 7987709099
-                  </a>
-                </div>
-              </div>
+
 
               {/* Location */}
               <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-white/5 border border-white/10 text-xs sm:text-sm text-slate-300">

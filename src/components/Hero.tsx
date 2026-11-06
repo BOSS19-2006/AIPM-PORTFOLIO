@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, Mail, Github, Linkedin, Phone, Sparkles, Award, MapPin, Activity, Cpu, Bot } from 'lucide-react';
+import { ArrowRight, Mail, Github, Linkedin, Sparkles, Award, MapPin, Activity, Cpu, Bot } from 'lucide-react';
 
 interface HeroProps {
   canvasRef: React.RefObject<HTMLCanvasElement | null>;
@@ -119,14 +119,6 @@ export default function Hero({ canvasRef, currentFrameIndex, totalFrames, onNavi
                 title="Email Me"
               >
                 <Mail className="w-4 h-4" />
-              </a>
-
-              <a
-                href="tel:7987709099"
-                className="w-9 h-9 rounded-full bg-white/5 border border-white/10 hover:border-orange-500/40 hover:bg-orange-500/10 hover:text-orange-400 text-slate-300 flex items-center justify-center transition-all duration-200"
-                title="Call Me"
-              >
-                <Phone className="w-4 h-4" />
               </a>
             </div>
           </div>
