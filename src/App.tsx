@@ -35,6 +35,20 @@ export default function App() {
   const [isResumeOpen, setIsResumeOpen] = useState(false);
   const [imagesLoaded, setImagesLoaded] = useState(false);
 
+  // Pause Lenis smooth scroll when Resume Modal is open so modal can scroll freely
+  useEffect(() => {
+    if (isResumeOpen) {
+      lenisRef.current?.stop();
+      document.body.style.overflow = 'hidden';
+    } else {
+      lenisRef.current?.start();
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isResumeOpen]);
+
   // Theme state: Dark mode by default, persisting to localStorage
   const [theme, setTheme] = useState<'dark' | 'light'>(() => {
     const saved = localStorage.getItem('theme');

@@ -16,8 +16,19 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/80 backdrop-blur-md animate-in fade-in">
-      <div className="glass-card w-full max-w-4xl rounded-3xl p-5 sm:p-8 border border-white/20 shadow-2xl relative max-h-[92vh] overflow-y-auto space-y-6">
+    <div 
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/80 backdrop-blur-md animate-in fade-in"
+      data-lenis-prevent="true"
+      onClick={(e) => {
+        if (e.target === e.currentTarget) onClose();
+      }}
+    >
+      <div 
+        className="glass-card w-full max-w-4xl rounded-3xl p-5 sm:p-8 border border-white/20 shadow-2xl relative max-h-[92vh] overflow-y-auto space-y-6 overscroll-contain"
+        data-lenis-prevent="true"
+        onWheel={(e) => e.stopPropagation()}
+        onTouchMove={(e) => e.stopPropagation()}
+      >
         
         {/* Header Bar */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 pb-4">
