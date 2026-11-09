@@ -8,7 +8,7 @@ export default function SkillsSection() {
       icon: Rocket,
       skills: [
         'Product Discovery', 'User Research', 'Problem Framing', 'PRDs & User Stories',
-        'User Flows', 'Feature Prioritization', 'Roadmapping', 'Product Metrics & KPI Definition', 'Stakeholder Communication'
+        'User Flows', 'Feature Prioritization (RICE)', 'Roadmapping', 'Product Metrics & KPI Definition', 'Stakeholder Communication'
       ]
     },
     {
@@ -16,7 +16,7 @@ export default function SkillsSection() {
       icon: Bot,
       skills: [
         'AI Product Strategy', 'AI Product Fundamentals', 'AI Use-Case Identification',
-        'Prompt Engineering', 'AI Tool Evaluation', 'AI Workflow Design', 'AI Product Research'
+        'Prompt Engineering', 'AI Tool Evaluation', 'AI Workflow Design', 'LLM Evaluation'
       ]
     },
     {
@@ -29,11 +29,11 @@ export default function SkillsSection() {
     },
   ];
 
-  const technicalSkills = ['Java (Core+Advance)', 'SQL', 'JavaScript', 'HTML', 'CSS'];
+  const technicalSkills = ['Core Java', 'Advanced SQL', 'JavaScript', 'HTML', 'CSS'];
 
   const tools = [
-    'Git', 'GitHub', 'ChatGPT', 'Claude Code', 'Make.com', 'n8n', 'Replit', 
-    'Antigravity', 'Codex', 'Amplitude', 'Mixpanel', 'Figma', 'Notion'
+    'Amplitude', 'Mixpanel', 'Figma', 'Notion', 'Make.com', 'n8n', 'Replit', 
+    'ChatGPT', 'Claude Code', 'Antigravity', 'Codex', 'Git', 'GitHub'
   ];
 
   const certifications = [

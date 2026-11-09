@@ -197,13 +197,13 @@ export default function ProductDecisionEngine() {
                 <div>
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-400 text-xs font-mono font-semibold mb-2">
                     <Sparkles className="w-3.5 h-3.5" />
-                    Product Management Capstone Project (Airtribe)
+                    Product Management Capstone (Fireflies.ai | Airtribe)
                   </div>
                   <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
-                    Fireflies.ai — Closed-Loop Execution Engine
+                    Fireflies.ai — Meeting Commitment Tracking
                   </h3>
                   <p className="text-xs text-slate-400 font-mono mt-1">
-                    From Meeting Notes to Closed Commitments
+                    Diagnosed transcription-to-execution gap • Authored PRD • Prioritized via RICE • Make.com & n8n Workflows
                   </p>
                 </div>
 
@@ -465,13 +465,13 @@ export default function ProductDecisionEngine() {
                 <div>
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-xs font-mono font-semibold mb-2">
                     <Rocket className="w-3.5 h-3.5" />
-                    Startup Product Project • Founder (Aug 2025 – Present)
+                    0-to-1 Product Discovery & Prototype | Independent Venture Case Study
                   </div>
                   <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
                     Adnivio — AI-First SME Growth Platform
                   </h3>
                   <p className="text-xs text-slate-400 font-mono mt-1">
-                    An AI-powered platform helping small & medium enterprises create, promote, manage, and measure digital presence.
+                    An AI-powered platform helping small & medium enterprises create, promote, manage, and measure their digital presence in one unified workspace.
                   </p>
                 </div>
 
@@ -495,15 +495,19 @@ export default function ProductDecisionEngine() {
                   <ul className="space-y-2 text-xs text-slate-300 font-light leading-relaxed">
                     <li className="flex items-start gap-2">
                       <span className="text-orange-400 font-bold">•</span>
-                      <span>Defined product strategy and end-to-end user journeys for an AI-powered SME growth platform.</span>
+                      <span>Defined product vision and prioritized user journeys for an AI-powered SME enablement platform, translating small business customer acquisition barriers into product feature specs.</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-orange-400 font-bold">•</span>
-                      <span>Designed core experiences across SME onboarding, marketplace, AI advertising, analytics, digital wallet, and buyer–seller messaging.</span>
+                      <span>Architected core end-to-end user flows across merchant onboarding, service marketplace, self-serve ad generation, performance analytics, and in-app wallet transactions.</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-orange-400 font-bold">•</span>
-                      <span>Evaluated AI use cases combining <strong className="text-white">OpenAI API</strong> for ad copy & <strong className="text-white">Gemini API</strong> for multivariant content generation.</span>
+                      <span>Conducted feasibility and trade-off assessments for AI-assisted ad copy creation, evaluating model inference cost, user value, and output guardrails.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-orange-400 font-bold">•</span>
+                      <span>Calculated market sizing (TAM/SAM/SOM of target micro-enterprises), designed a tiered monetization model, and mapped release milestones with accompanying guardrail metrics.</span>
                     </li>
                   </ul>
                 </div>

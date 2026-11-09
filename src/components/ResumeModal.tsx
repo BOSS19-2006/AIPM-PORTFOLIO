@@ -147,7 +147,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                 PROFESSIONAL SUMMARY
               </h4>
               <p className="leading-relaxed font-light text-slate-200 text-xs sm:text-[13px]">
-                Computer Science undergraduate focused on <strong className="text-white font-medium">Product Management</strong> and <strong className="text-white font-medium">AI-first products</strong>. Experienced in translating user and business problems into <strong className="text-white font-medium">product requirements, user journeys, prioritized features, prototypes</strong>, and <strong className="text-white font-medium">success metrics</strong> through product casework and startup development. Seeking <strong className="text-orange-400 font-medium">Product Management / AI Product Management</strong> internship opportunities.
+                Computer Science undergraduate specializing in <strong className="text-white font-medium">Product Management</strong> and <strong className="text-white font-medium">AI-first product development</strong>. Proven experience translating ambiguous customer pain points into structured <strong className="text-white font-medium">PRDs</strong>, prioritized feature backlogs (<strong className="text-orange-400 font-medium">RICE</strong>), interactive prototypes, and measurable <strong className="text-white font-medium">KPI frameworks</strong>. Seeking <strong className="text-orange-400 font-medium">Product Management / APM</strong> internship opportunities.
               </p>
             </div>
 
@@ -160,13 +160,13 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                 <div>
                   <span className="font-bold text-white">Product Management: </span>
                   <span className="text-slate-300 font-light">
-                    Product Discovery, User Research, Problem Framing, PRDs, User Stories, User Flows, Feature Prioritization, Roadmapping, Product Metrics, KPI Definition, Stakeholder Communication
+                    Product Discovery, User Research, Problem Framing, PRDs, User Stories, User Flows, Feature Prioritization (RICE), Roadmapping, Product Metrics, KPI Definition, Stakeholder Communication
                   </span>
                 </div>
                 <div>
                   <span className="font-bold text-white">AI Product Management: </span>
                   <span className="text-slate-300 font-light">
-                    AI Product Strategy, AI Product Fundamentals, AI Use-Case Identification, Prompt Engineering, AI Tool Evaluation, AI Workflow Design, AI Product Research
+                    AI Product Strategy, AI Product Fundamentals, AI Use-Case Identification, Prompt Engineering, AI Tool Evaluation, AI Workflow Design, LLM Evaluation
                   </span>
                 </div>
                 <div>
@@ -178,13 +178,13 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                 <div>
                   <span className="font-bold text-white">Technical: </span>
                   <span className="text-slate-300 font-light">
-                    Java (Core+Advance), SQL, JavaScript, HTML, CSS
+                    Core Java, Advanced SQL, JavaScript, HTML, CSS
                   </span>
                 </div>
                 <div>
-                  <span className="font-bold text-white">Tools: </span>
+                  <span className="font-bold text-white">Tools & Platforms: </span>
                   <span className="text-slate-300 font-light">
-                    Git, GitHub, ChatGPT, Claude Code, Make.com, n8n, Replit, Antigravity, Codex, Amplitude, Mixpanel, Figma, Notion
+                    Amplitude, Mixpanel, Figma, Notion, Make.com, n8n, Replit, ChatGPT, Claude Code, Antigravity, Codex, Git, GitHub
                   </span>
                 </div>
               </div>
@@ -206,13 +206,13 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                 </div>
                 <ul className="space-y-1.5 text-slate-300 list-disc list-inside font-light leading-relaxed">
                   <li>
-                    Coordinated delivery of <strong className="text-white font-medium">3 entrepreneurship events</strong> with marketing, outreach, and operations teams, contributing to a <strong className="text-orange-400 font-medium">40% increase</strong> in student engagement.
+                    Orchestrated cross-functional execution for <strong className="text-white font-medium">3 flagship entrepreneurship events</strong>, aligning marketing, outreach, and logistics to achieve a <strong className="text-orange-400 font-medium">40% increase</strong> in qualified student participation.
                   </li>
                   <li>
-                    Streamlined cross-functional event workflows by aligning marketing, outreach, and operations stakeholders, reducing coordination time by <strong className="text-white font-medium">30%</strong>.
+                    Standardized cross-functional communication and approval workflows across 3 internal teams, reducing project coordination time by <strong className="text-white font-medium">30%</strong>.
                   </li>
                   <li>
-                    Executed targeted digital outreach and partnership campaigns, contributing to a <strong className="text-orange-400 font-medium">55% increase</strong> in event attendance.
+                    Formulated targeted digital distribution and partner acquisition campaigns, resulting in a <strong className="text-orange-400 font-medium">55% increase</strong> in event attendance.
                   </li>
                 </ul>
               </div>
@@ -248,16 +248,16 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                 </div>
                 <ul className="space-y-1.5 text-slate-300 list-disc list-inside font-light leading-relaxed">
                   <li>
-                    Investigated the gap between meeting intelligence and post-meeting execution, identifying opportunities to improve commitment ownership and follow-through.
+                    Diagnosed the gap between post-meeting transcription and task ownership across knowledge workers through qualitative discovery and workflow analysis.
                   </li>
                   <li>
-                    Designed a connected solution combining <strong className="text-white font-medium">automated smart nudges, multi-tool synchronization</strong>, and <strong className="text-white font-medium">commitment lifecycle tracking</strong>; documented the experience in a <strong className="text-white font-medium">PRD</strong> and prioritized features using <strong className="text-orange-400 font-medium">RICE</strong>.
+                    Specced a connected solution combining <strong className="text-white font-medium">automated smart nudges, multi-tool synchronization</strong>, and <strong className="text-white font-medium">commitment lifecycle tracking</strong>; authored a comprehensive <strong className="text-white font-medium">PRD</strong> and prioritized features using <strong className="text-orange-400 font-medium">RICE</strong>.
                   </li>
                   <li>
-                    Set a proposed success target to improve meeting commitment resolution from <strong className="text-orange-400 font-medium">28% to 45% (+17 percentage points)</strong>; this is a target, not a measured outcome.
+                    Established success metrics targeting an improvement in meeting commitment resolution from <strong className="text-orange-400 font-medium">28% to 45% (+17 percentage points)</strong> based on asynchronous workplace benchmarks.
                   </li>
                   <li>
-                    Translated the solution into product requirements, user flows, success metrics, and <strong className="text-white font-medium">Make.com / n8n automation workflows</strong>.
+                    Engineered functional end-to-end automation workflows using <strong className="text-white font-medium">Make.com / n8n webhooks</strong> integrated with collaborative task managers.
                   </li>
                 </ul>
               </div>
@@ -283,20 +283,20 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                   </div>
                 </div>
                 <p className="text-[11px] text-slate-400 italic">
-                  Founder-led product concept | Product strategy, discovery, and prototype
+                  0-to-1 Product Discovery & Prototype | Independent Venture Case Study
                 </p>
                 <ul className="space-y-1.5 text-slate-300 list-disc list-inside font-light leading-relaxed">
                   <li>
-                    Shaped the product vision and prioritized user journeys for an <strong className="text-white font-medium">AI-powered SME growth platform</strong>, translating SME pain points into product opportunities.
+                    Defined product vision and prioritized user journeys for an <strong className="text-white font-medium">AI-powered SME enablement platform</strong>, translating small business customer acquisition barriers into product feature specs.
                   </li>
                   <li>
-                    Mapped the core experience across <strong className="text-white font-medium">SME onboarding, product/service marketplace, AI-assisted advertising, performance analytics, wallet</strong>, and <strong className="text-white font-medium">buyer–seller communication</strong>.
+                    Architected core end-to-end user flows across <strong className="text-white font-medium">merchant onboarding, service marketplace, self-serve ad generation, performance analytics</strong>, and <strong className="text-white font-medium">in-app wallet transactions</strong>.
                   </li>
                   <li>
-                    Evaluated AI use cases for ad creation, campaign planning, and performance insights against user value, business impact, feasibility, and responsible-AI considerations.
+                    Conducted feasibility and trade-off assessments for AI-assisted ad copy creation, evaluating model inference cost, user value, and output guardrails.
                   </li>
                   <li>
-                    Assessed competitors, SME market opportunities, <strong className="text-white font-medium">TAM/SAM/SOM, monetization</strong>, and positioning; documented requirements, feature priorities, prototype flows, and proposed success metrics.
+                    Calculated market sizing (<strong className="text-white font-medium">TAM/SAM/SOM</strong> of target micro-enterprises), designed a tiered monetization model, and mapped release milestones with accompanying guardrail metrics.
                   </li>
                 </ul>
               </div>

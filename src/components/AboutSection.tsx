@@ -4,8 +4,8 @@ import { User, Target, TrendingUp, Cpu, Award, GraduationCap, CheckCircle } from
 export default function AboutSection() {
   const highlights = [
     { 
-      title: 'Founder @ Adnivio (Startup Project)', 
-      desc: '0→1 Product Strategy, AI workflows, user discovery & prototyping for SME growth.' 
+      title: 'Founder @ Adnivio (0-to-1 Case Study)', 
+      desc: 'Product strategy, AI feasibility trade-offs, user discovery & prototyping for SME growth.' 
     },
     { 
       title: 'Airtribe Capstone Lead (Fireflies.ai)', 
@@ -41,10 +41,10 @@ export default function AboutSection() {
                 Computer Science undergraduate building AI-first products with data-informed precision.
               </h3>
               <p className="text-slate-300 text-sm sm:text-base leading-relaxed font-light">
-                I am a Computer Science undergraduate focused on Product Management and AI-first digital platforms. I possess hands-on expertise in product discovery, user research, PRD drafting, RICE prioritization, product metrics, and AI workflow integration.
+                I am a Computer Science undergraduate specializing in Product Management and AI-first product development. Proven experience translating ambiguous customer pain points into structured PRDs, prioritized feature backlogs (RICE), interactive prototypes, and measurable KPI frameworks.
               </p>
               <p className="text-slate-300 text-sm sm:text-base leading-relaxed font-light">
-                As the Founder of <strong className="text-orange-400 font-semibold">Adnivio</strong> (a startup product project), I defined product strategy, designed core user journeys across AI advertising & onboarding, and built clickable prototypes through the MSME portal submission stage. In my capstone project for <strong className="text-orange-400 font-semibold">Fireflies.ai</strong>, I addressed post-meeting follow-through bottlenecks targeting a +17 percentage point increase in resolution rate.
+                As the creator and product lead of <strong className="text-orange-400 font-semibold">Adnivio</strong> (0-to-1 Product Discovery & Prototype), I defined product vision, mapped core user flows across onboarding, self-serve AI ads, and in-app wallet transactions, and evaluated AI inference cost vs user value. In my capstone project for <strong className="text-orange-400 font-semibold">Fireflies.ai</strong>, I diagnosed commitment execution drop-offs and authored a full PRD targeting resolution improvement from 28% to 45% (+17 percentage points).
               </p>
             </div>
 

@@ -55,7 +55,7 @@ export default function Hero({ canvasRef, currentFrameIndex, totalFrames, onNavi
 
           {/* Summary Paragraph */}
           <p className="text-slate-300 text-base sm:text-lg max-w-xl leading-relaxed font-light">
-            Computer Science undergraduate specializing in AI-first products. Experienced in 0→1 product discovery, user research, PRDs, RICE prioritization, Make.com/n8n workflows, and data-informed decision making.
+            Computer Science undergraduate specializing in Product Management and AI-first product development. Proven experience translating ambiguous customer pain points into structured PRDs, prioritized feature backlogs (RICE), interactive prototypes, and measurable KPI frameworks.
           </p>
 
           {/* Certifications Badges */}
